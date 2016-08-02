@@ -17,7 +17,7 @@ Set-Location -Path $SiteCode`:
     $DriverCI_ID = $PSItem
     write-verbose "Found driverID: $PSItem"
 
-    $BootImages | ForEach-Object { #all the bootimages
+    $DestinationBootImages | ForEach-Object { #all the bootimages
         $BootImagePackageID = $PSITEM
         #Get the Boot image and the Driver
         $BootImageQuery = Get-WmiObject -Namespace "Root\SMS\Site_$SiteCode" -Class SMS_BootImagePackage -Filter "PackageID='$BootImagePackageID'"
