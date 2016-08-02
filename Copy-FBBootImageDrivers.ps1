@@ -35,7 +35,7 @@ Set-Location -Path $SiteCode`:
     } 
 }
 
-$BootImages | ForEach-Object { #all the bootimages
+$DestinationBootImages | ForEach-Object { #all the bootimages
     $BootImageQuery = Get-WmiObject -Namespace "Root\SMS\Site_$SiteCode" -Class SMS_BootImagePackage -Filter "PackageID='$PSItem'"
     $BootImageQuery.RefreshPkgSource()
 }
